@@ -1,0 +1,312 @@
+---
+title: 'Websites for Small Businesses | Dual Stream Web Designs | Binghamton, NY'
+description: 'Meta description for the page'
+preloadImg: '/assets/images/landing.jpg'
+permalink: '/'
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css" />
+    <link rel="stylesheet" href="/assets/css/critical.css" />
+
+    <!-- Script for Netlify Identity -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer>
+        if (window.netlifyIdentity) {
+            window
+                .netlifyIdentity
+                .on('init', (user) => {
+                    if (!user) {
+                        window
+                            .netlifyIdentity
+                            .on('login', () => {
+                                document.location.href = '/admin/';
+                            });
+                    }
+                });
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                    Hero                      -->
+    <!-- ============================================ -->
+
+    <section id="hero">
+        <div class="cs-container">
+            <div class="cs-left">
+                <h1 class="cs-title">Websites Tailor Made For Small Businesses</h1>
+                <p class="cs-text">
+                    For businesses that value their online presence, <span class="company-name">Dual Stream Web Designs</span> is the way to go!
+                    Boost your search engine rankings today.
+                </p>
+                <a href="/contact" class="cs-button-solid">Contact Us</a>
+            </div>
+        </div>
+        <div class="custom-shape-divider-bottom-1714279077">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <!-- Background Image -->
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/hero-bg.png">
+            <source media="(min-width: 601px)" srcset="/assets/images/hero-bg.png">
+            <img aria-hidden="true" decoding="async" src="/assets/images/hero-bg.png" alt="background wave" width="1380" height="920">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    About                     -->
+    <!-- ============================================ -->
+
+    <section id="about-us">
+        <div class="cs-container">
+            <div class="topper">
+                </div>
+                <h1 class="cs-title">A Little About Us</h1>
+                <img src="/assets/svgs/coding-website-svgrepo-com.svg" loading="lazy" decoding="async" height="32" width="32" alt="coding picture">
+                <span id="underline"></span>
+                <p class="cs-text">
+                    <span class="company-name">Dual Stream Web Designs</span> primarily seeks to help small businesses boost
+                    their online presence through a high quality, hand-coded website. Our goal is not only to make a visually appealing
+                    website for you and your business, but also make it high performing to boost search engine rankings, and ultimately
+                    revenue!
+                </p>
+                <a href="/about" class="cs-button-solid">More About Us</a>
+            </div>
+            <div class="cs-flex-group">
+                <div class="card">
+                    <img src="/assets/svgs/smartphone-svgrepo-com.svg" height="70" width="70" loading="lazy" decoding="async" alt="">
+                    <h2>Mobile First</h2>
+                    <p>The majority of web browsing is done on mobile devices today. which is why
+                        we code all of our websites to be optimized on mobile and scale up to fit on tablets 
+                        and laptops.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="/assets/images/speed-radar.png" height="70" width="70" loading="lazy" decoding="async" alt="">
+                    <h2>Pagespeed Optimized</h2>
+                    <p>
+                        A high performing website is the key to success in search engine rankings. 
+                        Our websites are guaranteed to score 98-100 in Performance, SEO, Accessibility, 
+                        and Best Practices.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="/assets/images/customization.png" height="70" width="70" loading="lazy" decoding="async" alt="">
+                    <h2>Custom Made</h2>
+                    <p>
+                        What's the point of having your own website if it doesn't fit your brand identity?
+                        Our websites are custom-made to perfectly reflect your business values and culture. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 How it Works                 -->
+    <!-- ============================================ -->
+
+    <section id="how-it-works">
+        <div class="cs-container">
+            <div class="cs-flex-group">
+                <h1 class="cs-title">How it Works</h1>
+                <p class="cs-text">
+                    Plans start at an affordable <span id="big-text">$150/month</span> for a standard custom 5-page website
+                    with a <span id="big-text">12 Month</span> contract minimum.
+                    We'll start by going over the design before any code is written. Once we make 
+                    any changes and you approve it, we can get started on the final product. From there,
+                    It's as simple as buying a domain and getting the website live!.
+                </p>
+                <a href="/about" class="cs-button-solid">Get in Touch</a>
+                <img src="/assets/svgs/undraw_segment_analysis_re_ocsl.svg" loading="lazy" decoding="async" alt="pricing" height="300" width="355">
+            </div>
+            <div class="cards-group">
+                <div class="card">
+                    <h2>10 Free Edits/Month</h1>
+                    <p>Enjoy 10 free edits per month. Done within 72 hours of your call between 9am and 5pm</p>
+                </div>
+                <div class="card">
+                    <h2>Hosting Fee Included</h1>
+                    <p>The cost of hosting your site online is included in your monthly payment</p>
+                </div>
+                <div class="card">
+                    <h2>10 Free Edits/Month</h1>
+                    <p>Enjoy 10 free edits per month. Done within 72 hours of your call between 9am and 5pm</p>
+                </div>
+                <div class="card">
+                    <h2>Hosting Fee Included</h1>
+                    <p>The cost of hosting your site online is included in your monthly payment</p>
+                </div>
+                <div class="card">
+                    <h2>10 Free Edits/Month</h1>
+                    <p>Enjoy 10 free edits per month. Done within 72 hours of your call between 9am and 5pm</p>
+                </div>
+                <div class="card">
+                    <h2>Hosting Fee Included</h1>
+                    <p>The cost of hosting your site online is included in your monthly payment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================ -->
+    <!--                   Gallery                    -->
+    <!-- ============================================ -->
+
+    <section id="gallery">
+        <div class="cs-container">
+            <span class="cs-topper">Our Portfolio</span>
+            <h2 class="cs-title">Et orci volutpat, back up generator installations</h2>
+            <div class="cs-image-group">
+                <!-- Row 1-->
+                <div class="cs-row cs-row-1">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port1-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port1.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port1.jpg" alt="new hallway" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port4-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port4.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port4.jpg" alt="new home construction" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port7-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port7.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port7.jpg" alt="building a new wall" loading="lazy" width="400" height="560">
+                    </picture>
+                </div>
+                <!-- Row 2 -->
+                <div class="cs-row cs-row-2">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port2-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port2.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port2.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port5-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port5.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port5.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port8-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port8.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port8.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
+                    </picture>
+                </div>
+                <!-- Row 3 -->
+                <div class="cs-row cs-row-3">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port3-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port3.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port3.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port6-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port6.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port6.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port9-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port9.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port9.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
+                    </picture>
+
+                </div>
+            </div>
+            <a href="/projects" class="cs-button-solid">View Full Gallery</a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                   Reviews                    -->
+    <!-- ============================================ -->
+
+    <section id="reviews">
+        <div class="cs-container">
+            <span class="cs-topper">Our Reviews</span>
+            <h2 class="cs-title">Words From Our Customers</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
+            </p>
+            <ul class="cs-card-group">
+                <!-- Review 1 -->
+                <li class="cs-item">
+                    <img
+                    class="cs-item-img"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
+                    alt="profile picture"
+                    width="80"
+                    height="80" />
+                    <p class="cs-item-p">
+                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
+                    </p>
+                    <span class="cs-reviewer">
+                        Jon Doe
+                        <span class="cs-desc">Homeowner</span>
+                    </span>
+                    <img
+                    class="cs-item-stars"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                    alt="stars"
+                    width="96"
+                    height="16" />
+                </li>
+                <!-- Review 2 -->
+                <li class="cs-item">
+                    <img
+                    class="cs-item-img"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
+                    alt="profile picture"
+                    width="80"
+                    height="80" />
+                    <p class="cs-item-p">
+                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
+                    </p>
+                    <span class="cs-reviewer">
+                        Jane Doe
+                        <span class="cs-desc">Homeowner</span>
+                    </span>
+                    <img
+                    class="cs-item-stars"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                    alt="stars"
+                    width="96"
+                    height="16" />
+                </li>
+            </ul>
+            <a aria-label="read more reviews" href="/reviews" class="cs-button-solid">Our Reviews</a>
+        </div>
+    </section>
+
+    <script src="/assets/js/home.js"></script>
+
+    {% include 'components/cta.html' %}
+{% endblock %}

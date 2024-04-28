@@ -1,0 +1,328 @@
+/* STYLES FOR ABOVE THE FOLD */
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0em) {
+  #hero {
+    font-family: "Barlow Condensed";
+    /* Centers button */
+    text-align: center;
+    /* changes on tablet */
+    padding: 0 1rem;
+    padding-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+    /* prevents overflow from the lines extending past the screen width */
+    overflow: hidden;
+  }
+  #hero picture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+  #hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #hero .custom-shape-divider-bottom-1714279077 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  #hero .custom-shape-divider-bottom-1714279077 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+  }
+  #hero .custom-shape-divider-bottom-1714279077 .shape-fill {
+    fill: #F6F5F2;
+  }
+  #hero .cs-container {
+    width: 100%;
+    max-width: 80em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    row-gap: 2.5rem;
+    padding: clamp(7em, 23.95vw, 15.5em) 0 clamp(11em, 27.95vw, 19.5em) 0;
+    position: relative;
+  }
+  #hero .cs-flex-group {
+    width: 90vw;
+    /* 464px - 562px */
+    max-width: clamp(29em, 60vw, 35.125em);
+    margin: auto;
+    /* 60px - 220px */
+    margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  #hero .cs-topper {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+  #hero .cs-title {
+    text-align: center;
+    width: 100%;
+    color: white;
+    line-height: clamp(0.875em, 3.5vw, 1.5em);
+    font-size: 2.25rem;
+  }
+  #hero .cs-text {
+    text-align: center;
+    /* 32px - 40px */
+    margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
+    /* 40px - 48px */
+    margin-bottom: clamp(2.5rem, 4vw, 3rem);
+    color: white;
+    font-size: 1.25rem;
+  }
+  #hero .cs-left {
+    font-size: min(1.2vw, 1em);
+    flex: none;
+    width: 90%;
+    text-align: center;
+  }
+  #hero .cs-right {
+    text-align: center;
+    height: 27vh;
+  }
+  #hero .cs-right img {
+    height: 100%;
+    width: auto;
+    border-radius: 7px;
+    box-shadow: 4px 4px 10px #d8d8d8;
+  }
+  #hero .cs-button-solid {
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    height: initial;
+    margin-bottom: 1rem;
+  }
+  #hero .cs-button-transparent {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-decoration: none;
+    width: 11.25rem;
+    /* 46px - 56px */
+    height: clamp(2.875em, 5.5vw, 3.5em);
+    margin: 0 0.5rem;
+    box-sizing: border-box;
+    padding: 0;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid var(--bodyTextColorWhite);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  #hero .cs-button-transparent:before {
+    content: "";
+    background: #000;
+    opacity: 1;
+    display: block;
+    position: absolute;
+    /* so it sits on top of the border */
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    z-index: -1;
+    /* this is what creates the grow affect on hover */
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+  #hero .cs-button-transparent:hover:before {
+    transform: scaleX(1);
+  }
+  #hero .cs-button-transparent img {
+    margin-right: 0.75rem;
+    display: block;
+    margin-top: 100px;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48em) {
+  #hero {
+    /* 32px - 40px */
+    padding: 0 clamp(2em, 5vw, 2.5em);
+  }
+  #hero #waves-bg {
+    /* Background Image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    display: block;
+  }
+  #hero #waves-bg img {
+    width: 100%;
+    height: 100%;
+    /* Makes image act like a background-image */
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #hero .cs-title {
+    width: 100%;
+    color: var(--primary);
+    line-height: clamp(0.875em, 3.5vw, 1.5em);
+    font-size: 3.75rem;
+  }
+  #hero .cs-button-solid {
+    margin-right: 1.25rem;
+    margin-bottom: 0;
+    padding: 0rem 3rem;
+  }
+  #hero .cs-container {
+    flex-flow: row;
+    gap: 3.75rem;
+  }
+  #hero .cs-left {
+    width: 43%;
+  }
+  #hero .cs-right {
+    margin: 0;
+    height: 37vh;
+    width: auto;
+  }
+}
+/* Desktop Parallax Effect - 1300px */
+@media only screen and (min-width: 81.25em) {
+  #hero {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* creates parallax effect on background image */
+    background-attachment: fixed;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0em) {
+  body.dark-mode #hero .cs-background:before {
+    opacity: 0.8;
+  }
+}
+/*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0em) {
+  .services {
+    width: 80%;
+    max-width: 82.5em;
+    margin: auto;
+    margin-top: -10.4375em;
+    margin-bottom: 3.125em;
+    padding: 3.125em 1.25em;
+    background: #fff;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+    border-top: 0.375em solid var(--primary);
+    border-radius: 0.3125em;
+    position: relative;
+    z-index: 100;
+  }
+  .services .card {
+    width: 100%;
+    max-width: 22.3125em;
+    margin: auto;
+    margin-bottom: 3.125em;
+    display: block;
+  }
+  .services .card:last-of-type {
+    margin-bottom: 0;
+  }
+  .services .card picture {
+    width: 5.5em;
+    height: 5.5em;
+    margin: auto;
+    margin-bottom: 1.4375em;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .services .card picture img {
+    width: 3em;
+    height: 3em;
+  }
+  .services .card h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.35em;
+    text-align: center;
+    margin-bottom: 0.65em;
+    color: #1a1a1a;
+  }
+  .services .card p {
+    line-height: 1.3333333333em;
+    text-align: center;
+    width: 100%;
+    opacity: 0.7;
+  }
+}
+/* Inbetween */
+@media only screen and (min-width: 768px) {
+  .services {
+    font-size: min(1.8vw, 1em);
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .services .card {
+    max-width: 20.3125em;
+    margin: 0;
+  }
+}
+/* Large Desktop */
+@media only screen and (min-width: 1300px) {
+  .services {
+    padding: 3.125em 5em;
+  }
+  .services .card {
+    max-width: 22.3125em;
+  }
+}
+/* Dark mode */
+@media only screen and (min-width: 0em) {
+  body.dark-mode #services {
+    background: var(--medium);
+  }
+  body.dark-mode #services picture {
+    background: var(--primaryDark);
+  }
+  body.dark-mode #services h2 {
+    font-weight: bold;
+    color: #fff;
+  }
+}
+
+/*# sourceMappingURL=critical.css.map */
