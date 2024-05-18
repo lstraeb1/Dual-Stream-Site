@@ -4,17 +4,14 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0em) {
     :root {
-        --primary: #102C57;
-        --altPrimary: #4d85d9;
-        --primaryLight: #ffd675;
-        --primaryHover: #DAC0A3;
-        --secondary: #001f3f;
-        --secondaryLight: #001f3f;
+        /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+        --primary: #4D869C;
+        --primaryLight: #CDE8E5;
+        --secondary: #4D869C;
+        --secondaryLight: #EEF7FF;
         --headerColor: #1a1a1a;
         --bodyTextColor: #4e4b66;
         --bodyTextColorWhite: #fafbfc;
-        --bodyTextColorBlack: #272727;
-
         /* 13px - 16px */
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
         /* 31px - 49px */
@@ -23,41 +20,63 @@
         /* 60px - 100px top and bottom */
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
     }
+    
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    *, *:before, *:after {
+        /* prevents padding from affecting height and width */
+        box-sizing: border-box;
+    }
     .cs-topper {
-        display: block;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
         font-size: var(--topperFontSize);
         line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: .1em;
+        font-weight: 400;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
     }
+    
     .cs-title {
-        position: relative;
-        margin: 0 auto 1rem;
         font-size: var(--headerFontSize);
-        line-height: 1.2em;
         font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 43.75rem;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+        font-family: "Barlow Condensed";
     }
+    
     .cs-text {
-        margin: 0 auto;
-        width: 100%;
         font-size: var(--bodyFontSize);
         line-height: 1.5em;
+        text-align: inherit;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        color: var(--bodyTextColor);
     }
     .cs-button-solid {
         z-index: 1;
         position: relative;
         display: inline-block;
-        height: 3.125rem;
+        // height: 3.6rem;
         width: auto;
-        padding: 0.2rem 2.875rem;
+        padding: 0.3rem 2.875rem;
         text-decoration: none;
         text-transform: uppercase;
         font-size: 1rem;
         line-height: 3.125em;
-        font-weight: normal;
+        font-weight: 400;
         color: #ffffff;
         background-color: var(--primary);
-        border-radius: 4px;
         transition: color 0.3s;
         transition-delay: 0.1s;
         text-align: center;
@@ -95,10 +114,10 @@
         margin: 0;
         overflow-x: hidden;
         padding: 0;
-        font-family: "Roboto", Arial, sans-serif;
+        font-family: "Barlow Condensed Normal";
         font-size: 100%;
         color: var(--bodyTextColor);
-        background-color: #F6F5F2;
+        background-color: #F8FCFF;
     }
     *,
     *:before,
@@ -153,7 +172,7 @@
     /* barlow-condensed-regular - latin */
     @font-face {
         font-display: swap; 
-        font-family: 'Barlow Condensed';
+        font-family: 'Barlow Condensed Normal';
         font-style: normal;
         font-weight: 400;
         src: url('/assets/fonts/barlow-condensed-v12-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
@@ -664,6 +683,9 @@
     #cta {
         position: relative;
         padding: calc(50 / 16 * 1rem) 0;
+        background-image: url("/assets/images/cta-bg.png");
+        background-size: 100%;
+        background-position: center;
 
         .container {
             text-align: center;
@@ -733,7 +755,7 @@
 @media only screen and (min-width: 1300px) {
     #cta {
         position: relative;
-        margin-top: calc(100 / 16 * 1rem);
+        // margin-top: calc(100 / 16 * 1rem);
         .container {
             margin: auto;
             width: 90.0625%;
