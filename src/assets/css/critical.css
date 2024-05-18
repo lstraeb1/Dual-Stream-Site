@@ -395,18 +395,5 @@
     max-width: 22.3125em;
   }
 }
-/* Dark mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #services {
-    background: var(--medium);
-  }
-  body.dark-mode #services picture {
-    background: var(--primaryDark);
-  }
-  body.dark-mode #services h2 {
-    font-weight: bold;
-    color: #fff;
-  }
-}
 
 /*# sourceMappingURL=critical.css.map */
