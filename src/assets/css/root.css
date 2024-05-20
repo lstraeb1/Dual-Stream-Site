@@ -215,7 +215,7 @@
     box-sizing: border-box;
     padding: 0.75rem 1rem;
     /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: "Barlow Condensed";
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
   #cs-navigation .cs-container {
@@ -384,7 +384,6 @@
     line-height: 1.2em;
     color: var(--headerColor);
     font-family: "Barlow Condensed";
-    color: var(--primary);
   }
   #cs-navigation .cs-li-link:before {
     position: absolute;
@@ -398,8 +397,12 @@
     height: 1px;
     width: 100%;
   }
+  #cs-navigation .cs-li-link.cs-active {
+    color: var(--primary);
+  }
   #cs-navigation .cs-li-link.cs-active:before {
     display: block;
+    color: var(--primary);
   }
   #cs-navigation .cs-button-solid {
     display: none;
@@ -509,8 +512,9 @@
     box-sizing: border-box;
     padding: 0 1rem;
     /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: "Barlow Condensed Normal";
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-weight: 400;
   }
   #cs-navigation .cs-container {
     display: flex;
@@ -520,6 +524,44 @@
     max-width: 80rem;
     width: 100%;
     gap: 1.5rem;
+  }
+  #cs-navigation .cs-container .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 2rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #cs-navigation .cs-container .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+    border-radius: 30px;
+    border: 2px solid var(--primary);
+  }
+  #cs-navigation .cs-container .cs-button-solid:hover {
+    color: var(--primary);
+  }
+  #cs-navigation .cs-container .cs-button-solid:hover:before {
+    opacity: 1;
   }
   #cs-navigation .cs-toggle {
     display: none;
@@ -564,7 +606,7 @@
     margin: 0;
     text-decoration: none;
     /* 14px - 16px */
-    font-size: clamp(0.875rem, 1vw, 1rem);
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
     line-height: 1.5em;
     color: var(--bodyTextColor);
   }
@@ -696,7 +738,7 @@
   #cta {
     position: relative;
     padding: 3.125rem 0;
-    background-image: url("/assets/images/cta-bg.png");
+    background-image: url("/assets/images/cta-bg.jpg");
     background-size: 100%;
     background-position: center;
   }
@@ -727,6 +769,7 @@
     font-weight: 900;
     color: #fff;
     text-align: center;
+    font-family: "Barlow Condensed";
   }
   #cta p {
     opacity: 1;
@@ -764,6 +807,44 @@
   #cta .container {
     margin: auto;
     width: 90.0625%;
+  }
+  #cta .container .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #cta .container .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+    border-radius: 30px;
+    border: 2px solid var(--primary);
+  }
+  #cta .container .cs-button-solid:hover {
+    color: var(--primary);
+  }
+  #cta .container .cs-button-solid:hover:before {
+    opacity: 1;
   }
   #cta picture {
     left: 50%;

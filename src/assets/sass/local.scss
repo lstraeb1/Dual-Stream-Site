@@ -321,16 +321,22 @@
 
             &:nth-of-type(1) {
                 &:after {
+                    margin: 0;
+                    position: absolute;
+                    right: calc(-40 / 16 * 1rem);
+                    top: 0;
                     transform: rotate(135deg) scaleX(-1);
                 }
             }
 
-            &:after {
-                margin: 0;
-                position: absolute;
-                right: calc(-40 / 16 * 1rem);
-                top: 0;
-                transform: rotate(45deg);
+            &:nth-of-type(2) {
+                &:after {
+                    margin: 0;
+                    position: absolute;
+                    right: calc(-40 / 16 * 1rem);
+                    top: 0;
+                    transform: rotate(45deg);
+                }
             }
         }
     }
@@ -535,7 +541,7 @@
       }
 
       .cs-text {
-          max-width: calc(1000 / 16 * 1rem);
+          max-width: calc(800 / 16 * 1rem);
       }
 
       .cs-button-solid {
@@ -634,13 +640,13 @@
       }
 
       .cs-floater {
-          width: calc(351 / 16 * 1rem);
+          width: calc(151 / 16 * 1rem);
           height: auto;
           display: none;
           position: absolute;
-          top: calc(-220 / 16 * 1rem);
-          right: calc(-60 / 16 * 1rem);
-          transform: rotate(-66deg);
+          top: calc(-120 / 16 * 1rem);
+          right: calc(60 / 16 * 1rem);
+          transform: rotate(46deg);
       }
   }
 }
@@ -1057,18 +1063,22 @@
                 content: '';
                 position: absolute;
                 height: 100%;
-                width: 0%;
-                background: #000;
-                opacity: 1;
+                width: 100%;
+                background: white;
+                opacity: 0;
                 top: 0;
                 left: 0;
                 z-index: -1;
-                transition: width .3s;
+                transition: opacity .3s ease-in-out, color 0.3s ease-in-out;
+                border-radius: 30px;
+                border: 2px solid var(--primary);
             }
-
+    
             &:hover {
+              color: var(--primary);
+    
                 &:before {
-                    width: 100%;
+                    opacity: 1;
                 }
             }
         }

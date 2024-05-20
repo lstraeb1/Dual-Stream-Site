@@ -230,7 +230,7 @@
         box-sizing: border-box;
         padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
         /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-        font-family: "Roboto", "Arial", sans-serif;
+        font-family: "Barlow Condensed";
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
         .cs-container {
@@ -418,7 +418,6 @@
             line-height: 1.2em;
             color: var(--headerColor);
             font-family: "Barlow Condensed";
-            color: var(--primary);
 
             &:before {
                 position: absolute;
@@ -434,8 +433,10 @@
             }
 
             &.cs-active {
+                color: var(--primary);
                 &:before {
                     display: block;
+                    color: var(--primary);
                 }
             }
         }
@@ -572,8 +573,9 @@
         box-sizing: border-box;
         padding: 0 calc(16 / 16 * 1rem);
         /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-        font-family: "Roboto", "Arial", sans-serif;
+        font-family: "Barlow Condensed Normal";
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        font-weight: 400;
 
         .cs-container {
             display: flex;
@@ -583,6 +585,48 @@
             max-width: calc(1280 / 16 * 1rem);
             width: 100%;
             gap: calc(24 / 16 * 1rem);
+
+            .cs-button-solid {
+                font-size: calc(16 / 16 * 1rem);
+                /* 46px - 56px */
+                line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+                text-decoration: none;
+                font-weight: 400;
+                text-align: center;
+                margin: 0;
+                color: #fff;
+                min-width: calc(150 / 16 * 1rem);
+                padding: 0 calc(32 / 16 * 1rem);
+                background-color: var(--primary);
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+                /* prevents padding from adding to the width */
+                box-sizing: border-box;
+      
+                &:before {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background: white;
+                    opacity: 0;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    transition: opacity .3s ease-in-out, color 0.3s ease-in-out;
+                    border-radius: 30px;
+                    border: 2px solid var(--primary);
+                }
+      
+                &:hover {
+                  color: var(--primary);
+      
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
         }
 
         .cs-toggle {
@@ -633,7 +677,7 @@
             margin: 0;
             text-decoration: none;
             /* 14px - 16px */
-            font-size: clamp(0.875rem, 1vw, 1rem);
+            font-size: clamp(1rem, 1.25vw, 1.25rem);
             line-height: 1.5em;
             color: var(--bodyTextColor);
             &:hover {
@@ -792,7 +836,7 @@
     #cta {
         position: relative;
         padding: calc(50 / 16 * 1rem) 0;
-        background-image: url("/assets/images/cta-bg.png");
+        background-image: url("/assets/images/cta-bg.jpg");
         background-size: 100%;
         background-position: center;
 
@@ -826,6 +870,7 @@
             font-weight: 900;
             color: #fff;
             text-align: center;
+            font-family: "Barlow Condensed";
         }
 
         p {
@@ -868,6 +913,48 @@
         .container {
             margin: auto;
             width: 90.0625%;
+
+            .cs-button-solid {
+                font-size: calc(16 / 16 * 1rem);
+                /* 46px - 56px */
+                line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+                text-decoration: none;
+                font-weight: 400;
+                text-align: center;
+                margin: 0;
+                color: #fff;
+                min-width: calc(150 / 16 * 1rem);
+                padding: 0 calc(24 / 16 * 1rem);
+                background-color: var(--primary);
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+                /* prevents padding from adding to the width */
+                box-sizing: border-box;
+    
+                &:before {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background: white;
+                    opacity: 0;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    transition: opacity .3s ease-in-out, color 0.3s ease-in-out;
+                    border-radius: 30px;
+                    border: 2px solid var(--primary);
+                }
+        
+                &:hover {
+                  color: var(--primary);
+        
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
         }
 
         picture {
