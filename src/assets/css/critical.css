@@ -127,15 +127,22 @@
   #hero-227 .cs-button-solid:before {
     content: "";
     position: absolute;
-    display: block;
     height: 100%;
-    width: 0%;
-    background: #000;
-    opacity: 1;
+    width: 100%;
+    background: white;
+    opacity: 0;
     top: 0;
     left: 0;
     z-index: -1;
-    transition: width 0.3s;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+    border-radius: 30px;
+    border: 2px solid var(--primary);
+  }
+  #hero-227 .cs-button-solid:hover {
+    color: var(--primary);
+  }
+  #hero-227 .cs-button-solid:hover:before {
+    opacity: 1;
   }
   #hero-227 .cs-button-transparent {
     font-size: 1rem;
