@@ -48,3 +48,26 @@ toggleBtn.addEventListener('click', () => {
 			nav.style.maxHeight = null;
 	}
 });
+
+const navSection = document.getElementById('cs-navigation');
+const navLinks = document.querySelectorAll('.cs-li-link');
+const section1 = document.getElementById('hero-227');
+const isDesktopOrLaptop = window.matchMedia("(min-width: 1024px)").matches;
+
+if (isDesktopOrLaptop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      // User has scrolled down, make the white background visible and change link colors
+      navSection.classList.add('scrolled');
+      navLinks.forEach(link => {
+        link.style.color = "black";
+      });
+    } else {
+      // User is at the top of the page, hide the white background and reset link colors
+      navSection.classList.remove('scrolled');
+      navLinks.forEach(link => {
+        link.style.color = ""; // Reset to default color or initial
+      });
+    }
+  });
+}

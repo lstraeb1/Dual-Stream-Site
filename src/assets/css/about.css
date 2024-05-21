@@ -1,169 +1,278 @@
-/* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
 /*-- -------------------------- -->
-<---       Side By Side         -->
+<---          Banner            -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0em) {
-  #sbs {
-    padding: var(--sectionPadding);
+  #banner-849 {
+    /* 175px - 260px top */
+    padding: clamp(10.9375rem, 20vw, 16.25rem) 1rem clamp(6.25rem, 14vw, 12vw);
+    /* clips svg wave from causing overflow issues */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
   }
-  #sbs .cs-container {
+  #banner-849 .cs-container {
+    text-align: center;
     width: 100%;
     max-width: 80rem;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    row-gap: 2.5rem;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
   }
-  #sbs .cs-left {
-    /* scaling the font size with the view width */
-    font-size: min(2.31vw, 0.7em);
-    /* using ems so we can use font size to scale the whole section */
-    width: 39.4375em;
-    height: 39.75em;
+  #banner-849 .cs-int-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
     position: relative;
+    font-family: "Barlow Condensed";
   }
-  #sbs .cs-picture {
-    border-radius: 1.5em;
-    display: block;
-    position: absolute;
-    /* clips img tag corners */
-    overflow: hidden;
-  }
-  #sbs .cs-picture img {
+  #banner-849 .cs-background {
     width: 100%;
     height: 100%;
-    /* makes image act like a background image */
-    object-fit: cover;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
   }
-  #sbs .cs-picture1 {
-    width: 32.625em;
-    height: 36.3125em;
+  #banner-849 .cs-background:before {
+    /* background color overlay */
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: rgba(57, 115, 138, 0.9) 16.86%;
+    opacity: 0.64;
     top: 0;
     left: 0;
+    z-index: 1;
   }
-  #sbs .cs-picture2 {
-    width: 25.875em;
-    height: 25em;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-    /* 6px - 12px */
-    border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-    right: 0;
-    bottom: 0;
+  #banner-849 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
   }
-  #sbs .cs-right {
-    max-width: 33.875rem;
+  #banner-849 .cs-wave {
+    /* we're stretching the svg wider than the viewport so it's taller and has more of a presence */
+    width: 48rem;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48em) {
+  #banner-849 .cs-background:before {
+    opacity: 1;
+    background: linear-gradient(90.01deg, rgba(32, 80, 99, 0.9) 16.86%, rgba(0, 0, 0, 0) 100%);
+  }
+  #banner-849 .cs-wave {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+}
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbsr-76 {
+    padding: var(--sectionPadding);
+    /* clips the red box from causing overflow issues */
+    overflow: hidden;
+  }
+  #sbsr-76 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
   }
-  #sbs .cs-topper {
+  #sbsr-76 .cs-content {
+    /* set text align to left if content needs to be left aligned */
     text-align: left;
-    margin-bottom: 0.25rem;
+    width: 100%;
+    max-width: 33.875rem;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
   }
-  #sbs .cs-title {
-    text-align: left;
-    max-width: 50rem;
-  }
-  #sbs .cs-text {
-    text-align: left;
-    max-width: 46.875rem;
+  #sbsr-76 .cs-text {
     margin-bottom: 1rem;
-    color: var(--bodyTextColor);
   }
-  #sbs .cs-text:last-of-type {
+  #sbsr-76 .cs-text:last-of-type {
     margin-bottom: 2rem;
   }
-  #sbs .cs-flex-group {
-    /* 16px - 32px */
-    padding: clamp(1rem, 3vw, 2rem);
-    background-color: #f7f7f7;
-    border-radius: 1rem;
-    position: relative;
-  }
-  #sbs .cs-flex-p {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    line-height: 1.5em;
-    margin: 0 0 1rem;
-    color: #353535;
-  }
-  #sbs .cs-name {
+  #sbsr-76 .cs-button-solid {
     font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.2em;
-    text-transform: uppercase;
-    margin: 0 0 0.25rem;
-    color: var(--headerColor);
-    display: block;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 30px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
   }
-  #sbs .cs-job {
-    font-size: 0.875rem;
-    line-height: 1.5em;
-    color: #353535;
-    display: block;
-  }
-  #sbs .cs-quote-icon {
-    /* 60px - 136px */
-    width: clamp(3.75rem, 10vw, 8.5rem);
-    height: auto;
+  #sbsr-76 .cs-button-solid:before {
+    content: "";
     position: absolute;
-    /* 16px - 32px */
-    right: clamp(1rem, 4vw, 2rem);
-    bottom: 0rem;
+    height: 100%;
+    width: 100%;
+    background: white;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 30px;
+    border: 2px solid var(--primary);
   }
-  #sbs .cs-button-solid {
-    margin-top: 2rem;
+  #sbsr-76 .cs-button-solid:hover {
+    color: var(--primary);
+  }
+  #sbsr-76 .cs-button-solid:hover:before {
+    opacity: 1;
+  }
+  #sbsr-76 .cs-wrapper {
+    width: 95%;
+    max-width: 34.375rem;
+    /* 28px - 80px */
+    /* pushes up and down by the same amount the decorative box overflows the wrapper */
+    margin: clamp(1.75em, 7.8vw, 5em) 0;
+    position: relative;
+    z-index: 1;
+  }
+  #sbsr-76 .cs-wrapper:before {
+    /* Red decorative box */
+    content: "";
+    /* make it huge so it covers everything on the left as it overflows */
+    width: 50em;
+    background: var(--primary);
+    opacity: 1;
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    /* 28px - 80px */
+    /* wrapped in a calc function to get a negative clamp value */
+    top: calc(clamp(1.75em, 7.8vw, 5em) * -1);
+    bottom: calc(clamp(1.75em, 7.8vw, 5em) * -1);
+    left: 4.0625em;
+    z-index: -1;
+  }
+  #sbsr-76 .cs-picture {
+    width: 100%;
+    margin: 0;
+    /* width divided by height */
+    aspect-ratio: 312/335;
+    border-radius: 1rem;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  #sbsr-76 .cs-picture:before {
+    /* Top right box */
+    content: "";
+    width: 10rem;
+    /* 202px - 248px */
+    height: clamp(12.625rem, 25vw, 15.5rem);
+    background: var(--primaryLight);
+    opacity: 1;
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    /* 16px -20px */
+    /* wrapped in a calc function to get a negative clamp value */
+    top: calc(clamp(0.5rem, 2.09vw, 1.25rem) * -1);
+    right: calc(clamp(0.5rem, 2.09vw, 1.25rem) * -1);
+  }
+  #sbsr-76 .cs-picture:after {
+    /* Bottom left box */
+    content: "";
+    width: 10rem;
+    /* 202px - 248px */
+    height: clamp(12.625rem, 25vw, 15.5rem);
+    background: var(--primaryLight);
+    opacity: 1;
+    border-radius: 1rem;
+    position: absolute;
+    display: block;
+    /* 16px -20px */
+    /* wrapped in a calc function to get a negative clamp value */
+    bottom: calc(clamp(0.5rem, 2.09vw, 1.25rem) * -1);
+    left: calc(clamp(0.5rem, 2.09vw, 1.25rem) * -1);
+    z-index: -1;
+  }
+  #sbsr-76 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
   }
 }
-/* Desktop - 1024px */
-@media only screen and (min-width: 64em) {
-  #sbs .cs-container {
-    flex-flow: row;
-    justify-content: space-between;
-    gap: 3.25rem;
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #sbsr-76 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* 60px - 128px */
+    gap: clamp(3.75rem, 9.5vw, 8rem);
   }
-  #sbs .cs-left {
-    font-size: min(1.2vw, 1em);
+  #sbsr-76 .cs-wrapper {
+    /* 328px - 502px */
+    width: clamp(20.5rem, 37.5vw, 31.375rem);
+    /* 440px - 520px */
+    height: clamp(27.5rem, 40vw, 32.5rem);
+    /* 16px - 20px */
+    margin-right: clamp(1rem, 5vw, 1.25rem);
+    /* sends it to the right in the 2nd position */
+    order: 2;
     flex: none;
   }
-  #sbs .cs-right {
+  #sbsr-76 .cs-picture {
     margin: 0;
+    height: 100%;
+    flex: none;
   }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #sbs .cs-left:before, body.dark-mode #sbs .cs-left:after {
-    background: var(--accent);
-  }
-  body.dark-mode #sbs .cs-picture2 {
-    background-color: var(--dark);
-    /* 6px - 12px */
-    border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-  }
-  body.dark-mode #sbs .cs-topper {
-    color: var(--primaryLight);
-  }
-  body.dark-mode #sbs .cs-title,
-  body.dark-mode #sbs .cs-text,
-  body.dark-mode #sbs .cs-h3,
-  body.dark-mode #sbs .cs-flex-p,
-  body.dark-mode #sbs .cs-name {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #sbs .cs-flex-group {
-    background-color: var(--accent);
-  }
-  body.dark-mode #sbs .cs-job {
-    color: var(--bodyTextColorWhite);
-    opacity: 0.8;
-  }
-  body.dark-mode #sbs .cs-quote-icon {
-    opacity: 0.2;
+  #sbsr-76 .cs-content {
+    width: 45%;
+    margin: 0;
   }
 }
 

@@ -5,8 +5,8 @@
 @media only screen and (min-width: 0em) {
     :root {
         /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-        --primary: #4D869C;
-        --primaryLight: #CDE8E5;
+        --primary: #39738a;
+        --primaryLight: #a3dcd6;
         --secondary: #4D869C;
         --secondaryLight: #EEF7FF;
         --headerColor: #1a1a1a;
@@ -36,7 +36,7 @@
         text-transform: uppercase;
         text-align: inherit;
         letter-spacing: .1em;
-        font-weight: 400;
+        font-weight: 700;
         color: var(--primary);
         margin-bottom: 0.25rem;
         display: block;
@@ -567,22 +567,39 @@
     #cs-navigation {
         z-index: 10000;
         position: fixed;
-        background-color: #fff;
         width: 100%;
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: 0 calc(16 / 16 * 1rem);
         /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
         font-family: "Barlow Condensed Normal";
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         font-weight: 400;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+            z-index: -1; // Place it behind the nav content
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            opacity: 0.9;
+        }
+        
+          &.scrolled::after {
+            transform: translateY(0);
+        }
 
         .cs-container {
             display: flex;
             justify-content: flex-end;
             align-items: center;
             margin: auto;
-            max-width: calc(1280 / 16 * 1rem);
+            max-width: calc(980 / 16 * 1rem);
             width: 100%;
             gap: calc(24 / 16 * 1rem);
 
@@ -614,7 +631,7 @@
                     top: 0;
                     left: 0;
                     z-index: -1;
-                    transition: opacity .3s ease-in-out, color 0.3s ease-in-out;
+                    transition: opacity .3s ease-in-out;
                     border-radius: 30px;
                     border: 2px solid var(--primary);
                 }
@@ -677,9 +694,10 @@
             margin: 0;
             text-decoration: none;
             /* 14px - 16px */
-            font-size: clamp(1rem, 1.25vw, 1.25rem);
+            font-size: clamp(1.15rem, 1.4vw, 1.4rem);
             line-height: 1.5em;
-            color: var(--bodyTextColor);
+            color: var(--bodyTextColorWhite);
+            transition: color 0.3s ease-in-out;
             &:hover {
                 &:before {
                     width: 100%;
@@ -1012,6 +1030,13 @@
             margin: auto;
             margin-bottom: calc(50 / 16 * 1rem);
             text-align: center;
+
+            ul, ul a {
+                text-decoration: none;
+                color: #FFFFFF;
+                list-style: none;
+            }
+            
             .logo {
                 display: inline-block;
                 margin: auto;
@@ -1160,7 +1185,7 @@
             flex-wrap: nowrap;
             justify-content: space-between;
             margin: auto;
-            max-width: calc(1320 / 16 * 1rem);
+            max-width: calc(1020 / 16 * 1rem);
             width: 96%;
             padding: 0;
         }
@@ -1185,7 +1210,7 @@
         .right-section {
             margin: 0;
             max-width: none;
-            width: calc(609 / 16 * 1rem);
+            width: calc(359 / 16 * 1rem);
             .lists {
                 margin: 0;
                 max-width: calc(769 / 16 * 1rem);
