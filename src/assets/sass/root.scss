@@ -9,6 +9,7 @@
         --primaryLight: #a3dcd6;
         --secondary: #4D869C;
         --secondaryLight: #EEF7FF;
+        --backgroundAlt: #eaf0f5;
         --headerColor: #1a1a1a;
         --bodyTextColor: #4e4b66;
         --bodyTextColorWhite: #fafbfc;
@@ -596,10 +597,11 @@
 
         .cs-container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             align-items: center;
+            // margin: 0 auto 0 calc(222 /16 * 1rem);
             margin: auto;
-            max-width: calc(980 / 16 * 1rem);
+            max-width: calc(780 / 16 * 1rem);
             width: 100%;
             gap: calc(24 / 16 * 1rem);
 
@@ -696,7 +698,7 @@
             /* 14px - 16px */
             font-size: clamp(1.15rem, 1.4vw, 1.4rem);
             line-height: 1.5em;
-            color: var(--bodyTextColorWhite);
+            color: var(--bodyTextColorBlack);
             transition: color 0.3s ease-in-out;
             &:hover {
                 &:before {
@@ -852,32 +854,11 @@
 /* Mobile */
 @media only screen and (min-width: 0em) {
     #cta {
-        position: relative;
-        padding: calc(50 / 16 * 1rem) 0;
-        background-image: url("/assets/images/cta-bg.jpg");
-        background-size: 100%;
-        background-position: center;
+        background: linear-gradient(135deg, var(--primary),#78b7cf 70%);
+        padding: calc(108 / 16 * 1rem) 0;
 
         .container {
             text-align: center;
-        }
-
-        picture {
-            z-index: -2;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
         }
 
         .title {
@@ -887,7 +868,7 @@
             line-height: calc(58 / 48 * 1em);
             font-weight: 900;
             color: #fff;
-            text-align: center;
+            text-align: left;
             font-family: "Barlow Condensed";
         }
 
@@ -913,13 +894,31 @@
             height: 100%;
             width: 100%;
         }
+
+        .cs-button-solid {
+            color: var(--primary);
+            transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            background: white;
+            font-weight: bold;
+            padding: 0.5rem calc(76/16 * 1rem);
+    
+            &:before {
+                background-color: black;
+                border: none;
+            }
+    
+            &:hover {
+                color: white;
+                background: black;
+            }
+        }
     }
 }
 
 /* Small Desktop */
 @media only screen and (min-width: 64em) {
     #cta {
-        padding: calc(168 / 16 * 1rem) 0;
+        padding: calc(108 / 16 * 1rem) 0;
     }
 }
 
@@ -930,105 +929,11 @@
         // margin-top: calc(100 / 16 * 1rem);
         .container {
             margin: auto;
-            width: 90.0625%;
-
-            .cs-button-solid {
-                font-size: calc(16 / 16 * 1rem);
-                /* 46px - 56px */
-                line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-                text-decoration: none;
-                font-weight: 400;
-                text-align: center;
-                margin: 0;
-                color: #fff;
-                min-width: calc(150 / 16 * 1rem);
-                padding: 0 calc(24 / 16 * 1rem);
-                background-color: var(--primary);
-                display: inline-block;
-                position: relative;
-                z-index: 1;
-                /* prevents padding from adding to the width */
-                box-sizing: border-box;
-    
-                &:before {
-                    content: '';
-                    position: absolute;
-                    height: 100%;
-                    width: 100%;
-                    background: white;
-                    opacity: 0;
-                    top: 0;
-                    left: 0;
-                    z-index: -1;
-                    transition: opacity .3s ease-in-out, color 0.3s ease-in-out;
-                    border-radius: 30px;
-                    border: 2px solid var(--primary);
-                }
-        
-                &:hover {
-                  color: var(--primary);
-        
-                    &:before {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-
-        picture {
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90.0625%;
-
-            &:before {
-                z-index: 1;
-                position: absolute;
-                top: 0;
-                left: 0;
-                content: "";
-                opacity: 0.7;
-                display: block;
-                background: #000;
-                height: 100%;
-                width: 100%;
-            }
-        }
-        &:before {
-            display: none;
-        }
-        &:after {
-            z-index: -3;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            content: "";
-            opacity: 1;
-            transform: translateX(-50%);
-            display: block;
-            background: url("/assets/svgs/cta-squares.svg");
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            height: calc(1108 / 16 * 1rem);
-            width: calc(2000 / 16 * 1rem);
-        }
-    }
-}
-
-/* Desktop Parallax Effect - 1300px */
-@media only screen and (min-width: 81.25rem) {
-    #cta {
-        background: url("/assets/images/cta-bg.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        /* creates parallax effect on background image */
-        background-attachment: fixed;
-        /* remove img tag so we can make parallax work */
-        .cs-background {
-            img {
-                display: none;
-            }
+            width: 60.0625%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
         }
     }
 }
@@ -1041,7 +946,7 @@
 @media only screen and (min-width: 0em) {
     #footer {
         background: #1c1c1c;
-        padding: calc(84 / 16 * 1rem) 0 calc(20 / 16 * 1rem);
+        padding: calc(84 / 16 * 1rem) 0 calc(80 / 16 * 1rem);
         font-size: min(4vw, 1.2em);
 
         .left-section {
@@ -1102,7 +1007,7 @@
                         opacity: 0.9;
                         margin-bottom: calc(12 / 16 * 1rem);
                         list-style: none;
-                        font-size: calc(18 / 16 * 1rem);
+                        font-size: calc(22 / 16 * 1rem);
                         color: #fff;
 
                         a {
@@ -1110,6 +1015,8 @@
                             line-height: calc(21 / 18 * 1em);
                             color: #fff;
                             transition: color 0.3s;
+                            font-size: calc(22 / 16 * 1rem);
+
                             &:hover {
                                 color: var(--primary);
                             }
@@ -1119,7 +1026,7 @@
                         position: relative;
                         margin-bottom: calc(37 / 16 * 1rem);
                         text-transform: uppercase;
-                        font-size: calc(18 / 16 * 1rem);
+                        font-size: calc(28 / 16 * 1rem);
                         line-height: calc(21 / 18 * 1em);
                         font-weight: bold;
                         color: #fff;
