@@ -12,6 +12,7 @@
         overflow: hidden;
         position: relative;
         z-index: 1;
+        background-color: #EEF7FF;
 
         .cs-container {
             text-align: center;
@@ -104,6 +105,24 @@
             width: 100%;
             left: 0;
             transform: none;
+        }
+    }
+}
+
+/* Desktop Parallax Effect - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #banner-849 {
+        background: url("/assets/images/pexels-kelly-1179532-23848564.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* creates parallax effect on background image */
+        background-attachment: fixed;
+        /* remove img tag so we can make parallax work */
+        .cs-background {
+            img {
+                display: none;
+            }
         }
     }
 }
@@ -310,6 +329,220 @@
         .cs-content {
             width: 45%;
             margin: 0;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-1073 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: calc(550 / 16 * 1rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            /* changes to 433px at desktop */
+            max-width: calc(542 / 16 * 1rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-text {
+            margin-bottom: calc(16 / 16 * 1rem);
+            &:last-of-type {
+                margin-bottom: calc(32 / 16 * 1rem);
+            }
+        }
+
+        .cs-list {
+            max-width: calc(630 / 16 * 1rem);
+            margin: 0 0 calc(32 / 16 * 1rem) 0;
+            padding: 0;
+            /* clips the bullets to create the half circle */
+            overflow: hidden;
+        }
+
+        .cs-li {
+            list-style: none;
+            margin: 0 0 calc(8 / 16 * 1rem) 0;
+            color: var(--bodyTextColor);
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: calc(12 / 16 * 1rem);
+            position: relative;
+
+            &:before {
+                /* bullet */
+                content: "";
+                width: calc(16 / 16 * 1rem);
+                height: calc(16 / 16 * 1rem);
+                margin-top: calc(3 / 16 * 1rem);
+                /* make it overflow the parent by half it's width to make an eclipse */
+                margin-left: calc(-8 / 16 * 1rem);
+                background: var(--secondary);
+                border-radius: 50%;
+                display: block;
+                /* prevents flexbox from squishing it */
+                flex: none;
+            }
+        }
+
+        .cs-link {
+            text-decoration: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: calc(12 / 16 * 1rem);
+            position: relative;
+
+            &:hover {
+                .cs-wrapper {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .cs-wrapper {
+            width: calc(56 / 16 * 1rem);
+            height: calc(56 / 16 * 1rem);
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* prevents flexbox from squishing it */
+            flex: none;
+            transition: transform 0.3s;
+        }
+
+        .cs-icon {
+            width: calc(24 / 16 * 1rem);
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .cs-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: calc(4 / 16 * 1rem);
+        }
+
+        .cs-header {
+            font-size: calc(14 / 16 * 1rem);
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
+            display: block;
+        }
+
+        .cs-link-content {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 4vw, 1.5625rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--headerColor);
+            display: block;
+        }
+
+        .cs-image-group {
+            /* scales the whole group based on the view width size and stop when that vales equals .745em, resets at desktop */
+            font-size: min(1.959vw, 0.745em);
+            width: calc(738 / 16 * 1em);
+            height: calc(662 / 16 * 1em);
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-picture {
+            position: absolute;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .cs-picture1 {
+            width: calc(219 / 16 * 1em);
+            height: calc(440 / 16 * 1em);
+            top: calc(102 / 16 * 1em);
+            left: 0;
+            z-index: -1;
+        }
+
+        .cs-picture2 {
+            width: calc(307 / 16 * 1em);
+            height: calc(600 / 16 * 1em);
+            bottom: 0;
+            left: calc(217 / 16 * 1em);
+            z-index: 10;
+        }
+
+        .cs-picture3 {
+            width: calc(218 / 16 * 1em);
+            height: calc(440 / 16 * 1em);
+            top: calc(182 / 16 * 1em);
+            right: 0;
+            z-index: -1;
+        }
+
+        .cs-stripes {
+            width: calc(578 / 16 * 1em);
+            height: auto;
+            display: block;
+            position: absolute;
+            top: calc(0 / 16 * 1em);
+            left: calc(72 / 16 * 1em);
+            z-index: -2;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbs-1073 {
+        .cs-container {
+            max-width: calc(1280 / 16 * 1em);
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cs-content {
+            max-width: calc(433 / 16 * 1em);
+        }
+
+        .cs-image-group {
+            font-size: min(1.2vw, 1em);
+            flex: none;
         }
     }
 }
